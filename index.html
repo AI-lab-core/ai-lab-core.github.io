@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,30 +14,45 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #f4f6f9;
       color: #222;
       line-height: 1.6;
+
+      background-image:
+        linear-gradient(rgba(5, 15, 35, 0.78), rgba(5, 15, 35, 0.78)),
+        url("images/background.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(135deg, #102a43, #243b53);
+      background: transparent;
       color: white;
-      padding: 70px 20px;
+      padding: 110px 20px 80px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 48px;
+      font-size: 56px;
       margin-bottom: 15px;
       letter-spacing: 1px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
     }
 
     header h2 {
       font-size: 24px;
       font-weight: 400;
       color: #d9e2ec;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
     }
 
     .container {
@@ -46,11 +62,12 @@
     }
 
     section {
-      background: white;
+      background: rgba(255, 255, 255, 0.92);
       margin-bottom: 35px;
       padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(6px);
     }
 
     section h2 {
@@ -74,13 +91,13 @@
 
     .members-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
       margin-top: 25px;
     }
 
     .member-card {
-      background: #f8fafc;
+      background: rgba(248, 250, 252, 0.96);
       border-radius: 14px;
       padding: 25px;
       text-align: center;
@@ -90,7 +107,7 @@
 
     .member-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
     }
 
     .member-card img {
@@ -100,6 +117,7 @@
       border-radius: 50%;
       margin-bottom: 18px;
       border: 4px solid #2f80ed;
+      background: #e6eef8;
     }
 
     .member-card h3 {
@@ -122,7 +140,7 @@
 
     .publication {
       border-left: 5px solid #2f80ed;
-      background: #f8fafc;
+      background: rgba(248, 250, 252, 0.96);
       padding: 22px;
       border-radius: 10px;
       margin-top: 20px;
@@ -151,7 +169,7 @@
     }
 
     footer {
-      background: #102a43;
+      background: rgba(16, 42, 67, 0.94);
       color: white;
       text-align: center;
       padding: 25px;
@@ -159,16 +177,29 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      header {
+        padding: 80px 20px 50px;
+      }
+
       header h1 {
         font-size: 36px;
       }
 
       header h2 {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       section {
         padding: 25px;
+      }
+
+      .member-card img {
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
@@ -176,15 +207,13 @@
 
 <body>
 
-  <!-- Group Name and University Name -->
   <header>
     <h1>Graph-AI-Lab</h1>
-    <h2></h2>
+    <h2>Artificial Intelligence for Graphs, Networks, and Complex Systems</h2>
   </header>
 
   <main class="container">
 
-    <!-- Group Members Names -->
     <section class="member-list">
       <h2>Group Members</h2>
       <ul>
@@ -195,52 +224,50 @@
       </ul>
     </section>
 
-    <!-- Full Details of Each Member -->
     <section>
       <h2>Members</h2>
 
       <div class="members-grid">
 
         <div class="member-card">
-          <img src="images/2.jpg" alt="Member 1 Photo">
+          <img src="images/2.jpg" alt="Prof. Laleh Tafakori Photo">
           <h3>Prof. Laleh Tafakori</h3>
           <p><strong>Position:</strong> Group Leader</p>
           <p><strong>Affiliation:</strong> RMIT University, School of Science</p>
           <p><strong>Research Interests:</strong> Graph Mining, Complex Networks, Network Science, AI</p>
-          <p><strong>Email:</strong>laleh.tafakoriATrmit.edu.au</p>
+          <p><strong>Email:</strong> laleh.tafakori AT rmit.edu.au</p>
         </div>
 
         <div class="member-card">
-          <img src="images/4.jpg" alt="Member 2 Photo">
-          <h3>Prof. Mahdi Lalili</h3>
-          <p><strong>Position:</strong>Group Leader</p>
+          <img src="images/4.jpg" alt="Prof. Mahdi Jalili Photo">
+          <h3>Prof. Mahdi Jalili</h3>
+          <p><strong>Position:</strong> Group Leader</p>
           <p><strong>Affiliation:</strong> RMIT University, School of Engineering</p>
           <p><strong>Research Interests:</strong> Machine Learning, Social Networks, Graph Neural Networks</p>
-          <p><strong>Email:</strong>mahdi.jaliliATrmit.edu.au</p>
+          <p><strong>Email:</strong> mahdi.jalili AT rmit.edu.au</p>
         </div>
 
         <div class="member-card">
-          <img src="images/3.jpg" alt="Member 3 Photo">
+          <img src="images/3.jpg" alt="Prof. Hossein Hassani Photo">
           <h3>Prof. Hossein Hassani</h3>
-          <p><strong>Position:</strong>Group Leader</p>
-          <p><strong>Affiliation:</strong>International Institute for Applied Systems Analysis (IIASA)</p>
+          <p><strong>Position:</strong> Group Leader</p>
+          <p><strong>Affiliation:</strong> International Institute for Applied Systems Analysis (IIASA)</p>
           <p><strong>Research Interests:</strong> Influence Maximization, Diffusion Models</p>
-          <p><strong>Email:</strong>hassaniATiiasa.ac.at </p>
+          <p><strong>Email:</strong> hassani AT iiasa.ac.at</p>
         </div>
 
         <div class="member-card">
-          <img src="images/1.jpg" alt="Member 4 Photo">
+          <img src="images/1.jpg" alt="Amjad Osmani Photo">
           <h3>Amjad Osmani</h3>
-          <p><strong>Position:</strong>Resercher</p>
+          <p><strong>Position:</strong> Researcher</p>
           <p><strong>Affiliation:</strong> RMIT University, School of Science</p>
           <p><strong>Research Interests:</strong> Complex Systems, Graph Representation Learning, Network Optimization</p>
-          <p><strong>Email:</strong>amjad.osmaniATrmit.edu.au</p>
+          <p><strong>Email:</strong> amjad.osmani AT rmit.edu.au</p>
         </div>
 
       </div>
     </section>
 
-    <!-- Group Description -->
     <section class="description">
       <h2>About Graph-AI-Lab</h2>
 
@@ -256,14 +283,13 @@
 
       <p>
         Our research combines machine learning, network analytics, graph representation
-        learning, optimization, diffusion modeling, and AI to develop
-        scalable and interpretable methods for real-world graph data.
-        The main goal of the lab is to design intelligent models that can understand,
-        analyze, and optimize complex networked systems.
+        learning, optimization, diffusion modeling, and AI to develop scalable and
+        interpretable methods for real-world graph data. The main goal of the lab is
+        to design intelligent models that can understand, analyze, and optimize complex
+        networked systems.
       </p>
     </section>
 
-    <!-- First Publication -->
     <section>
       <h2>Publication 1</h2>
 
@@ -275,7 +301,8 @@
         <p>
           <strong>Abstract:</strong>
           This publication investigates advanced artificial intelligence methods for
-          graph-structured data, focusing on network analysis, influence diffusion and scalable graph learning.
+          graph-structured data, focusing on network analysis, influence diffusion,
+          and scalable graph learning.
         </p>
         <p>
           <a href="#" target="_blank">Read Paper</a>
@@ -283,7 +310,6 @@
       </div>
     </section>
 
-    <!-- Second Publication -->
     <section>
       <h2>Publication 2</h2>
 
@@ -295,8 +321,8 @@
         <p>
           <strong>Abstract:</strong>
           This publication presents a network science framework for modeling complex
-          systems and understanding structural, dynamic, and AI-related patterns
-          in large-scale networks.
+          systems and understanding structural, dynamic, and AI-related patterns in
+          large-scale networks.
         </p>
         <p>
           <a href="#" target="_blank">Read Paper</a>
@@ -312,3 +338,4 @@
 
 </body>
 </html>
+```
